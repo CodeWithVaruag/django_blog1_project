@@ -1,0 +1,78 @@
+
+body{
+    background-color: white;
+}
+
+.nav-wrapper.bg-primary {
+    background-color: black;
+    color: white; 
+}
+
+bg-secondary {
+    color: #f1eaea;}
+
+/* Round the buttons and add special effect on hover */
+.btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px; /* Adjust the value for the desired button roundness */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #222; /* Change the background color on hover */
+    color: white; /* Change the text color on hover */
+    transform: scale(1.1); /* Add a scale effect on hover */
+}
+
+
+.container-custom {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.slick-carousel .card {
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    padding: 10px; /* Added padding */
+}
+
+.slick-carousel .card img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel .carousel-item {
+    visibility: hidden;
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    padding: 10px; /* Added padding */
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-content {
+    font-size: 1.2rem;
+}

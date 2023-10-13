@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+       <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Add your CSS and JavaScript links here -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</head>
+
+{% load static %}
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+
+
+<header>
+    <nav class="nav-wrapper bg-primary">
+        <div class="container">
+            <a href="/" class="brand-logo">MY-BLOGS</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/" class="bg-primary">About</a></li>
+                <li><a href="/admin" class="bg-primary">Admin</a></li>
+                <!-- Dropdown Trigger -->
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+<body>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <script>
+        $(document).ready(function(){
+           $(".slick-carousel").slick({
+              slidesToShow: 3, // Number of cards to show at once
+              // Other Slick Carousel options
+           });
+        });
+     </script>
+     
+    
+</body>
+</html>

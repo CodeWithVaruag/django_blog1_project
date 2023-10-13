@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Blogs</title>
+    <link rel="stylesheet" href="your-styles.css"> <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+</head>
+
+
+
+
+
+{%block content%}
+
+  <div class="container-custom">
+    <div class="slick-carousel" style="height: auto; overflow: hidden; "> <!-- Increased the height to 300px -->
+        <div class="carousel"  style=" height:600px ">
+            {% for cat in category %}
+            <div class="carousel-item card">
+                <div class="img-container">
+                    <img src="/media/{{cat.image}}" alt="{{cat.title}}" class="responsive-img" style="height: 250px; width: 100%;">
+                </div>
+                <div class "card-content">
+                    <div class="card-title">{{cat.title}}</div>
+                    <div class="container center-align mt20">
+                        <a href="/category/{{cat.url}}" class="btn">View</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt20">
+    <div class="row">
+        {% for p in posts %}
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-image ">
+                    <img src="/media/{{ p.image }}" alt="{{ p.title }}" class="responsive-img">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <span class="card-title">{{ p.title }}</span>
+                        {{ p.content|truncatewords:80|safe }}
+                    </div>
+                    <div class="card-action">
+                        <a href="/blog/{{ p.urls }}" class="btn">Read more ...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Initialize Materialize Carousel
+        $('.carousel').carousel();
+
+        // Initialize Slick Carousel
+        $('.slick-carousel').slick({
+            slidesToShow: 3,
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>'
+        });
+
+        // Initialize Dropdown Trigger
+        $(".dropdown-trigger").dropdown();
+    });
+</script>
+{%endblock%}
+</html>
